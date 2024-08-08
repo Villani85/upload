@@ -14,7 +14,10 @@ document.getElementById('uploadForm').addEventListener('submit', function(e) {
     const formData = new FormData();
     formData.append('file', file);
 
-    fetch('/upload', {
+    // Modifica questo URL con quello del tuo server backend
+    const backendUrl = 'http://localhost:3000/upload';  // Usa l'URL del server Heroku o altro se in produzione
+
+    fetch(backendUrl, {
         method: 'POST',
         body: formData
     })
